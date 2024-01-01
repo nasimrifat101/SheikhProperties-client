@@ -4,9 +4,40 @@ const Navbar = () => {
     const isUser = true
 
     const navLinks = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to='/allProperties'>All Properties</NavLink></li>
-        <li><NavLink to='/savedProperties'>Saved Properties</NavLink></li>
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                }
+                to="/"
+            >
+                <span className="font-semibold">Home</span>
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                }
+                to='/allProperties'
+            >
+                <span className="font-semibold">All Properties</span>
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                }
+                to='/savedProperties'
+            >
+                <span className="font-semibold">Saved Properties</span>
+            </NavLink>
+        </li>
+
+
     </>
 
 
@@ -25,7 +56,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8] text-base-300">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,7 +66,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Sheikh Properties</a>
+                    <a className="btn btn-ghost font-semibold text-xl">Sheikh Properties</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
