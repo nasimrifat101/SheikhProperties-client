@@ -7,7 +7,7 @@ const Navbar = () => {
         <li>
             <NavLink
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                    isPending ? "pending" : isActive ? "font-black underline" : ""
                 }
                 to="/"
             >
@@ -18,7 +18,7 @@ const Navbar = () => {
         <li>
             <NavLink
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                    isPending ? "pending" : isActive ? "font-black underline" : ""
                 }
                 to='/allProperties'
             >
@@ -29,7 +29,7 @@ const Navbar = () => {
         <li>
             <NavLink
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-base-300 font-black underline" : ""
+                    isPending ? "pending" : isActive ? "font-black underline" : ""
                 }
                 to='/savedProperties'
             >
@@ -56,7 +56,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8] text-base-300">
+            <div className="navbar bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
