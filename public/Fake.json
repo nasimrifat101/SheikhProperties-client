@@ -1,0 +1,106 @@
+[
+    {
+      "id": 1,
+      "name": "Modern City Apartment",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "size": 1200,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+    },
+    {
+      "id": 2,
+      "name": "Spacious Suburban House",
+      "image": "https://i.postimg.cc/J4G6V157/al-elmes-ULHxWq8reao-unsplash.jpg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": 2000,
+       "address": "Savar, Dhaka",
+       "status": "Rent"
+    },
+    {
+      "id": 3,
+      "name": "Luxury Beachfront Villa",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "size": 3500,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+    },
+    {
+      "id": 4,
+      "name": "Cozy Mountain Cabin",
+      "image": "https://i.postimg.cc/JnyNYQX1/austin-distel-wD1LRb9OeEo-unsplash.jpg",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "size": 800,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+    },
+    {
+      "id": 5,
+      "name": "Downtown Loft",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "size": 1000,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+    },
+    {
+      "id": 6,
+      "name": "Rustic Countryside Estate",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 5,
+      "bathrooms": 3.5,
+      "size": 4500,
+       "address": "Savar, Dhaka",
+      "status": "Rent"
+    },
+    {
+      "id": 7,
+      "name": "Urban Penthouse",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "size": 1800,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+    },
+    {
+      "id": 8,
+      "name": "Contemporary Lake House",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "size": 3000,
+       "address": "Savar, Dhaka",
+      "status": "Sale"
+
+    },
+    {
+      "id": 9,
+      "name": "Historic Townhouse",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": 2200,
+       "address": "Savar, Dhaka",
+       "status": "Rent"
+
+    },
+    {
+      "id": 10,
+      "name": "Mansion on the Hill",
+      "image": "https://i.postimg.cc/wT1rwd6n/tim-meyer--t3vuJWHY7w-unsplash.jpg",
+      "bedrooms": 6,
+      "bathrooms": 5,
+      "size": 6000,
+       "address": "Savar, Dhaka",
+       "status": "Rent"
+  
+    }
+  ]
+  
