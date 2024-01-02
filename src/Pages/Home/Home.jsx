@@ -5,11 +5,13 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Sheikh Properties - Home</title>
+                <title>
+                    Sheikh Properties - Home
+                </title>
             </Helmet>
             <Navbar />
             <Banner />
-            <Featured/>
+            <Featured />
 
         </>
     );
