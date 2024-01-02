@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Featured = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('/public/Fake.json')
+        axios.get('/Fake.json')
             .then(res => {
                 setData(res.data)
             })
@@ -25,9 +25,9 @@ const Featured = () => {
                     )
                 }
             </div>
-           <div className="flex justify-center">
-           <Link className="font-bold underline btn-ghost btn">Show More Properties</Link>
-           </div>
+            <div className="flex justify-center">
+                <Link className="font-bold underline btn-ghost btn">Show More Properties</Link>
+            </div>
 
         </div>
     );
