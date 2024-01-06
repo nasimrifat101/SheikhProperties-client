@@ -17,7 +17,7 @@ const Featured = () => {
     const datas = data.slice(0, 8)
     return (
         <div className="max-w-6xl mx-auto min-h-screen my-5">
-            <h1 className="text-4xl font-bold text-center mt-14">Featured Properties</h1>
+            <h1 className="text-4xl font-bold mt-14">Featured Properties</h1>
             <div className="grid grid-cols-4 gap-4 py-10">
                 {
                     datas?.map(item => <FeatureCard key={item.id} item={item} />
