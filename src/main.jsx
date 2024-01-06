@@ -5,16 +5,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import { router } from './Providers';
+import { AuthProvider, router } from './Providers';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <AuthProvider> */}
+    <AuthProvider>
     <HelmetProvider>
       <RouterProvider router={router} />
     </HelmetProvider>
-    {/* </AuthProvider> */}
+    </AuthProvider>
 
   </React.StrictMode>,
 )
