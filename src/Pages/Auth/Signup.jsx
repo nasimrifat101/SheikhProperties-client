@@ -1,166 +1,109 @@
-/* eslint-disable no-unused-vars */
-import { Helmet } from "react-helmet-async";
-import { RiHome2Fill } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-// import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
-// import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-// import { storage } from "../../Firebase/firebase.config";
-import { ToastContainer, toast } from "react-toastify";
-import SocialLogin from "./SocialLogin";
-// import useAxiosNormal from "../../Hooks/useAxiosNormal";
-// import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { TbHomeShare } from "react-icons/tb";
+import { LuEyeOff } from "react-icons/lu";
+import { GiBleedingEye } from "react-icons/gi";
 
 
-const SignUp = () => {
-    //   const { createAccount, updateUserProfile, googleLogin } = useAuth();
-    //   const storageRef = ref(storage, "photo");
-    //   const navigate = useNavigate();
-    const [isCreatingAccount, setIsCreatingAccount] = useState(false);
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-    } = useForm();
-    //   const axiosNormal = useAxiosNormal();
-
-    const onSubmit = async (data) => {
-        console.log(data);
-
-        // try {
-        //   setIsCreatingAccount(true);
-
-        //   const { name, photo, email, password } = data;
-
-        //   const photoRef = ref(storage, `photo/${name}-photo.jpg`);
-        //   await uploadBytes(photoRef, photo[0]);
-        //   const imageURL = await getDownloadURL(photoRef);
-
-        //   await createAccount(email, password);
-        //   await updateUserProfile(name, imageURL);
-        //   // post user
-        //   const userInfo = { name, profile: imageURL, email };
-        //   axiosNormal.post("/users", userInfo).then((res) => {
-        //     if (res.data.insertedId) {
-        //       Swal.fire({
-        //         position: "top-end",
-        //         icon: "success",
-        //         title: "User Created",
-        //         showConfirmButton: false,
-        //         timer: 1500,
-        //       });
-        //       navigate("/");
-        //     } else {
-        //       toast.success("Account Created Successfully");
-        //     }
-        //   });
-        // } catch (error) {
-        //   console.error(error);
-        //   toast.error(
-        //     "Email already exists or there was an error creating the account"
-        //   );
-        // } finally {
-        //   setIsCreatingAccount(false);
-        // }
-    };
+const Signup = () => {
+    const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div>
-            <div className="">
-                <Helmet>
-                    <title>InventiSync | SignUp</title>
-                </Helmet>
-
-                <div className="max-w-6xl mx-auto grid lg:grid-cols-2">
-                    <div className="p-10 hidden lg:block">
-                        <img
-                            src="https://i.postimg.cc/jjBBjXnF/andrea-leopardi-o4-HLzt7k-F1-A-unsplash.jpg"
-                            alt="Beautiful Architecture"
-                            className="h-[600px] w-full"
-                        />
-                    </div>
-                    <div className="items-center space-y-2 p-10">
-                        <p className="font-semibold text-3xl">SignUp to</p>
-                        <p className="text-3xl lg:text-5xl font-bold ">Sheikh Properties</p>
-                        <div className="pt-5 space-y-3">
-                            <Link to="/">
-                                <button className="btn w-full" aria-label="Go to Home">
-                                    <RiHome2Fill />
-                                    Home
-                                </button>
-                            </Link>
-                            <SocialLogin></SocialLogin>
+        <>
+            {/* Helmet can be included here if needed */}
+            <div className="w-full h-screen flex lg:px-3 md:px-12 px-8  ">
+                {/* form Div */}
+                <div className="lg:w-1/2 flex flex-col items-center justify-center">
+                    <div className="w-full md:px-10 lg:px-4 xl:px-28">
+                        <div className="space-y-5">
+                            <h1 className="text-2xl md:text-4xl xl:text-5xl font-semibold">
+                                Hello There :)
+                            </h1>
+                            <p className="xl:text-2xl lg:text-xl text-gray-500 pb-3">
+                                Create an account and start your career journey with us &
+                                recruiters from all around the globe.
+                            </p>
                         </div>
-                        <div className="divider"></div>
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <form className="space-y-3 w-full">
                             <div className="form-control w-full">
+                                <label htmlFor="name" className="text-xl font-semibold py-1">
+                                    Name
+                                </label>
                                 <input
                                     type="text"
-                                    {...register("name", { required: "Name is required" })}
                                     placeholder="Your Name"
-                                    className="input input-bordered"
+                                    className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
                                 />
                             </div>
+
                             <div className="form-control w-full">
-                                <input
-                                    type="file"
-                                    {...register("photo", { required: "Photo is required" })}
-                                    accept="image/*"
-                                    className="mt-1 p-2 border rounded-md w-[240px] lg:w-full"
-                                />
-                            </div>
-                            <div className="form-control w-full">
+                                <label htmlFor="email" className="text-xl font-semibold py-1">
+                                    Email
+                                </label>
                                 <input
                                     type="email"
-                                    {...register("email", { required: "Email is required" })}
-                                    placeholder="Your Email"
-                                    className="input input-bordered"
+                                    placeholder="example@gmail.com"
+                                    className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
                                 />
                             </div>
-                            <div className="form-control w-full">
+                            <div className="form-control w-full relative">
+                                <label
+                                    htmlFor="password"
+                                    className="text-xl font-semibold py-1"
+                                >
+                                    Password
+                                </label>
                                 <input
-                                    type="password"
-                                    {...register("password", {
-                                        required: "Password is required",
-                                        pattern: {
-                                            value:
-                                                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-                                            message:
-                                                "Password must meet the requirements: at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 6 characters long.",
-                                        },
-                                    })}
-                                    placeholder="Your Password"
-                                    className="input input-bordered"
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="at least 6 characters long"
+                                    className="input-md md:input-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF] mb-4"
                                 />
-                                {errors.password && (
-                                    <p className="text-red-500">{errors.password.message}</p>
-                                )}
+                                <span
+                                    className="absolute top-[50px] md:top-[55px] md:text-lg right-3 cursor-pointer lg:text-2xl"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <GiBleedingEye /> : <LuEyeOff />}
+                                </span>
                             </div>
-                            {isCreatingAccount ? (
-                                <div className="flex items-center justify-center">
-                                    <span className="loading loading-infinity loading-lg"></span>
-                                </div>
-                            ) : (
-                                <input
-                                    type="submit"
-                                    value="Create account"
-                                    className="btn w-full"
-                                />
-                            )}
-                            <div className="flex justify-between">
+
+                            <button
+                                type="submit"
+                                className="btn md:btn-lg w-full bg-[#162D3A] text-white hover:bg-green-400 hover:text-black duration-500"
+                            >
+                                Create account
+                            </button>
+
+                            <div className="divider divider-neutral">
+                                <Link to="/" className="text-2xl">
+                                    <TbHomeShare />
+                                </Link>
+                            </div>
+
+                            {/* Social Login Section */}
+                            {/* <SocialLogin /> - You can include this component here if needed */}
+
+                            <div className="flex justify-between md:text-xl">
                                 <p>Already have an account?</p>
                                 <Link to="/login">
-                                    <p className="underline text-green-300">Login</p>
+                                    <p className="hover:text-green-500 cursor-pointer text-violet-400 font-semibold underline">
+                                        Login
+                                    </p>
                                 </Link>
                             </div>
                         </form>
                     </div>
                 </div>
+                {/* image div */}
+                <div className="lg:w-1/2 object-cover m-4 hidden lg:block">
+                    <img
+                        src="https://i.postimg.cc/jjBBjXnF/andrea-leopardi-o4-HLzt7k-F1-A-unsplash.jpg"
+                        className="w-full h-full object-cover rounded-xl"
+                        alt=""
+                    />
+                </div>
             </div>
-            <ToastContainer />
-        </div>
+        </>
     );
 };
 
-export default SignUp;
+export default Signup;
