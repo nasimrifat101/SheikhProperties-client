@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const FeatureCard = ({ item }) => {
     return (
         <div key={item.id} className="card card-compact bg-white border hover:shadow-xl duration-1000 ease-in-out">
-            <figure><img src={item.image} alt={item.name} className="p-1 rounded-t-2xl h-[180px] w-full" /></figure>
+            <figure><img src={item.image} alt={item.name} className="p-2 rounded-t-2xl h-[230px] w-full hover:scale-105 duration-1000 ease-in-out" /></figure>
             <div className="card-body">
                 <h2 className="font-bold">{item.name}</h2>
                 <div className="space-y-2">

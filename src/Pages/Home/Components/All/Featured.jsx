@@ -16,7 +16,7 @@ const Featured = () => {
 
     const datas = data.slice(0, 8)
     return (
-        <div className="max-w-6xl mx-auto min-h-screen my-5">
+        <div className="max-w-screen-2xl mx-auto min-h-screen my-5">
             <h1 className="text-4xl font-bold mt-14">Featured Properties</h1>
             <div className="grid grid-cols-4 gap-4 py-10">
                 {

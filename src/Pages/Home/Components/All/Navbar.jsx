@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const isUser = false
+    const [isScrolled, setIsScrolled] = useState(false)
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY || window.pageYOffset; // Handle browser compatibility
+            setIsScrolled(scrollPosition > 20)
+        }
+    
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+    
     const navLinks = <>
         <li>
             <NavLink
@@ -41,22 +55,13 @@ const Navbar = () => {
     </>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <>
-            <div className="navbar bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8]">
+           <div
+                className={`navbar fixed w-full z-10  ${
+                    isScrolled ? "backdrop-blur-md duration-500" : "bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8]"
+                }`}
+            >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
