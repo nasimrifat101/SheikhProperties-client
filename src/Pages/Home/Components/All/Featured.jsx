@@ -15,6 +15,7 @@ const Featured = () => {
     }, [])
 
     const datas = data.slice(0, 8)
+    
     return (
         <div className="bg-gradient-to-tr from-[#ffffff] via-[#fffbf3] to-[#ffffff]">
             <div className="max-w-screen-2xl  mx-auto min-h-screen py-5">
