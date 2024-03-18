@@ -17,7 +17,7 @@ const Featured = () => {
     const datas = data.slice(0, 8)
     
     return (
-        <div className="bg-gradient-to-tr from-[#ffffff] via-[#fffbf3] to-[#ffffff]">
+        <div>
             <div className="max-w-screen-2xl  mx-auto min-h-screen py-5">
                 <h1 className="text-4xl font-bold pt-14">Featured Properties</h1>
                 <div className="grid grid-cols-4 gap-4 py-10">
