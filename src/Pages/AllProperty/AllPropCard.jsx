@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
+import { FaLocationDot, FaShower } from "react-icons/fa6";
 import { LiaBedSolid } from "react-icons/lia";
-import { FaShower } from "react-icons/fa6";
 import { SlSizeFullscreen } from "react-icons/sl";
-import { FaLocationDot } from "react-icons/fa6";
-const FeatureCard = ({ item }) => {
+
+const AllPropCard = ({ item }) => {
     return (
         <>
             {
@@ -94,4 +94,4 @@ const FeatureCard = ({ item }) => {
     );
 };
 
-export default FeatureCard;
+export default AllPropCard;

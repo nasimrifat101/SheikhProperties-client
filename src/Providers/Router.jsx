@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/Error/NotFound";
 import { Login, Signup } from "../Pages/Auth";
+import AllProperty from "../Pages/AllProperty/AllProperty";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
             {
                 path: "/Signup",
                 element: <Signup />
+            },
+            {
+                path: "/allProperties",
+                element:<AllProperty/>
             }
         ]
     },

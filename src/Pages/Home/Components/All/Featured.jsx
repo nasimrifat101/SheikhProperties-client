@@ -15,7 +15,7 @@ const Featured = () => {
     }, [])
 
     const datas = data.slice(0, 8)
-    
+
     return (
         <div>
             <div className="max-w-screen-2xl  mx-auto min-h-screen py-5">
@@ -28,7 +28,7 @@ const Featured = () => {
                     }
                 </div>
                 <div className="flex justify-center">
-                    <Link className="font-bold underline btn-ghost btn">Show More Properties</Link>
+                    <Link to={'/allProperties'} className="font-bold underline btn-ghost btn">Show More Properties</Link>
                 </div>
             </div>
         </div>
