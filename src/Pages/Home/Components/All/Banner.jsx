@@ -10,7 +10,7 @@ const Banner = () => {
                 <div className="space-y-10 my-auto">
                     <h1 className="text-7xl font-extrabold leading-snug tracking-tight">We'll help you find a place you'll love</h1>
                     <p className="text-2xl">
-                        Premier real estate services – buy, sell, lease. Specializing in commercial space. Your property journey starts here!</p>
+                        Premium real estate services – buy, sell, lease. Specializing in commercial space. Your property journey starts here!</p>
                     <button>
                         <Link to='/allProperties' className="font-bold underline flex items-center text-xl">Explore All Properties <MdDoubleArrow className="text-xl" /> </Link>
                     </button>
