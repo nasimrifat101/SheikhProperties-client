@@ -48,7 +48,7 @@ const AllProperty = () => {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen bg-white">
                 <div className="max-w-screen-2xl mx-auto">
                     <div className="flex justify-center items-center h-96 w-full pt-20">
                         <p className="text-5xl font-semibold leading-relaxed text-center">Navigate Properties and Find Your <br />Perfect Real Estate!</p>
