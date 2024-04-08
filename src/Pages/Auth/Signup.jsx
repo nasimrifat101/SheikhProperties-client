@@ -3,10 +3,38 @@ import { Link } from "react-router-dom";
 import { TbHomeShare } from "react-icons/tb";
 import { LuEyeOff } from "react-icons/lu";
 import { GiBleedingEye } from "react-icons/gi";
+import useAuth from "../../Hooks/useAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
+    const { createUser, updateUser } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSignup = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        try {
+            setLoading(true);
+            await createUser(email, password);
+            await updateUser(name)
+            toast.success("Account created successfully!");
+            navigate("/")
+        } catch (error) {
+            toast.error("Failed to create account. Please try again.");
+            setLoading(false)
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -24,7 +52,7 @@ const Signup = () => {
                                 recruiters from all around the globe.
                             </p>
                         </div>
-                        <form className="space-y-3 w-full">
+                        <form onSubmit={handleSignup} className="space-y-3 w-full">
                             <div className="form-control w-full">
                                 <label htmlFor="name" className="text-xl font-semibold py-1">
                                     Name
@@ -33,6 +61,7 @@ const Signup = () => {
                                     type="text"
                                     placeholder="Your Name"
                                     className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
+                                    name='name'
                                 />
                             </div>
 
@@ -44,6 +73,8 @@ const Signup = () => {
                                     type="email"
                                     placeholder="example@gmail.com"
                                     className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
+                                    name='email'
+
                                 />
                             </div>
                             <div className="form-control w-full relative">
@@ -57,6 +88,7 @@ const Signup = () => {
                                     type={showPassword ? "text" : "password"}
                                     placeholder="at least 6 characters long"
                                     className="input-md md:input-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF] mb-4"
+                                    name="password"
                                 />
                                 <span
                                     className="absolute top-[50px] md:top-[55px] md:text-lg right-3 cursor-pointer lg:text-2xl"
@@ -69,8 +101,9 @@ const Signup = () => {
                             <button
                                 type="submit"
                                 className="btn md:btn-lg w-full bg-[#162D3A] text-white hover:bg-green-400 hover:text-black duration-500"
+                                disabled={loading}
                             >
-                                Create account
+                                {loading ? "Creating account..." : "Create account"}
                             </button>
 
                             <div className="divider divider-neutral">
@@ -101,6 +134,7 @@ const Signup = () => {
                         alt=""
                     />
                 </div>
+                <ToastContainer />
             </div>
         </>
     );

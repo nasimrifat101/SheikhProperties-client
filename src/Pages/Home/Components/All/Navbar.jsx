@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../../Hooks/useAuth";
 
 const Navbar = () => {
-    const isUser = false
+    const { user, logOut } = useAuth()
     const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
@@ -10,13 +11,13 @@ const Navbar = () => {
             const scrollPosition = window.scrollY || window.pageYOffset; // Handle browser compatibility
             setIsScrolled(scrollPosition > 20)
         }
-    
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
-    
+
     const navLinks = <>
         <li>
             <NavLink
@@ -57,10 +58,9 @@ const Navbar = () => {
 
     return (
         <>
-           <div
-                className={`navbar fixed w-full z-10  ${
-                    isScrolled ? "backdrop-blur-md duration-500" : "bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8]"
-                }`}
+            <div
+                className={`navbar fixed w-full z-10  ${isScrolled ? "backdrop-blur-md duration-500" : "bg-gradient-to-r from-[#FFFAF0] via-[#FEFDF7] to-[#FDECC8]"
+                    }`}
             >
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -80,17 +80,17 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        isUser ?
+                        user ?
 
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
-                                        <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        <p>{user?.displayName?.toUpperCase()}</p>
                                     </div>
                                 </div>
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
 
-                                    <li><a>Logout</a></li>
+                                    <li><button onClick={() => { logOut() }}>Logout</button></li>
                                 </ul>
                             </div>
                             :
