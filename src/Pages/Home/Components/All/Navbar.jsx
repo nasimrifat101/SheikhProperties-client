@@ -6,6 +6,8 @@ const Navbar = () => {
     const { user, logOut } = useAuth()
     const [isScrolled, setIsScrolled] = useState(false)
 
+    const isAdmin = true
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY || window.pageYOffset; // Handle browser compatibility
@@ -47,11 +49,26 @@ const Navbar = () => {
                     className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "font-black underline" : ""
                     }
-                    to='/savedProperties'
+                    to='/saved'
                 >
                     <span className="font-semibold">Saved Properties</span>
                 </NavLink>
-            </li>}
+            </li>
+        }
+        {user && isAdmin === true ?
+            <li>
+                <NavLink
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "font-black underline" : ""
+                    }
+                    to='/admin'
+                >
+                    <span className="font-semibold">Admin</span>
+                </NavLink>
+            </li>
+            :
+            null
+        }
     </>
 
 

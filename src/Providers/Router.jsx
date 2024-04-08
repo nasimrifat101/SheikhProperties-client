@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/Error/NotFound";
 import { Login, Signup } from "../Pages/Auth";
 import AllProperty from "../Pages/AllProperty/AllProperty";
+import Saved from "../Pages/Save/Saved";
+import Admin from "../Pages/Admin/Admin";
 
 export const router = createBrowserRouter([
     {
@@ -25,8 +27,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/allProperties",
-                element:<AllProperty/>
-            }
+                element: <AllProperty />
+            },
+            {
+                path: "/saved",
+                element: <Saved />
+            },
+            {
+                path: "/admin",
+                element: <Admin/>
+            },
         ]
     },
 ]);
