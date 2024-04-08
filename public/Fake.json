@@ -6,7 +6,7 @@
     "bedrooms": 2,
     "bathrooms": 1.5,
     "size": 1200,
-    "address": "Savar, Dhaka",
+    "address": "Ashulia, Dhaka",
     "status": "Sale",
     "item": "House"
   },
@@ -26,7 +26,7 @@
     "bedrooms": 4,
     "bathrooms": 4,
     "size": 3500,
-    "address": "Savar, Dhaka",
+    "address": "Ashulia, Dhaka",
     "status": "Sale",
     "item": "Apartment"
   },
