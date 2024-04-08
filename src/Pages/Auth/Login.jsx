@@ -1,97 +1,33 @@
-// import { useForm } from "react-hook-form";
-// import { Link } from "react-router-dom";
-// import { ToastContainer } from "react-toastify";
-// import SocialLogin from "./SocialLogin";
-// import {RiHome2Fill} from "react-icons/ri";
-
-// const Login = () => {
-
-//     const {
-//         register,
-//         formState: { errors },
-//         handleSubmit,
-//     } = useForm();
-
-//     const onSubmit = async (data) => {
-//         console.log(data)
-//     }
-//     return (
-//         <div className="min-h-screen">
-//             <div className="min-h-screen my-auto max-w-6xl mx-auto grid grid-cols-2">
-//                 <div>
-//                     <img src="https://i.postimg.cc/3RFdZF71/aron-yigin-am-Bva-OYIRLY-unsplash.jpg" className="w-full h-screen" alt="" />
-//                 </div>
-//                 <div className="bg-white min-h-screen my-auto">
-
-//                     <div className="items-center space-y-2 p-10">
-//                         <p className="font-semibold text-3xl">Login to</p>
-//                         <p className="text-3xl lg:text-5xl font-bold">Sheikh Properties</p>
-//                         <div className="pt-5 space-y-3">
-//                             <Link to="/">
-//                                 <button className="btn w-full" aria-label="Go to Home">
-//                                     <RiHome2Fill />
-//                                     Home
-//                                 </button>
-//                             </Link>
-//                             <SocialLogin />
-//                         </div>
-//                         <div className="divider"></div>
-//                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-//                             <div className="form-control w-full">
-//                                 <input
-//                                     type="email"
-//                                     {...register("email", { required: "Email is required" })}
-//                                     placeholder="Your Email"
-//                                     className="input input-bordered"
-//                                 />
-//                             </div>
-//                             <div className="form-control w-full">
-//                                 <input
-//                                     type="password"
-//                                     {...register("password", {
-//                                         required: "Password is required",
-//                                         pattern: {
-//                                             value:
-//                                                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-//                                             message:
-//                                                 "Password must meet the requirements: at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 6 characters long.",
-//                                         },
-//                                     })}
-//                                     placeholder="Your Password"
-//                                     className="input input-bordered"
-//                                 />
-//                                 {errors.password && (
-//                                     <p className="text-red-500">{errors.password.message}</p>
-//                                 )}
-//                             </div>
-//                             <input type="submit" value="Login" className="btn w-full" />
-//                             <div className="flex justify-between">
-//                                 <p>Dont have an account?</p>
-//                                 <Link to="/signUp">
-//                                     <p className="underline text-green-300">SignUp</p>
-//                                 </Link>
-//                             </div>
-//                         </form>
-//                     </div>
-
-//                     <ToastContainer />
-
-
-//                 </div>
-
-//             </div>
-
-//         </div>
-//     );
-// };
-
-// export default Login;
-
-
-import { Link } from "react-router-dom";
+/* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { TbHomeShare } from "react-icons/tb";
+import useAuth from "../../Hooks/useAuth";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Login = () => {
+  const { loginUser } = useAuth()
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    try {
+      setLoading(true)
+      await loginUser(email, password)
+      navigate('/')
+
+    } catch (error) {
+      toast.error("Failed to create account. Please try again.");
+      setLoading(false)
+    } finally {
+      setLoading(false);
+    }
+  }
   return (
     <>
       {/* Helmet can be included here if needed */}
@@ -104,12 +40,12 @@ const Login = () => {
                 Welcome Back <span className="lg:text-5xl">👋🏻</span>
               </h1>
               <p className="md:text-xl xl:text-2xl text-gray-500 font-normal">
-                Today is a new day. It's your day. You shape it. Sign in to
+                Today is a new day. Its your day. You shape it. Sign in to
                 start managing your Career path.
               </p>
             </div>
             {/* form starts here */}
-            <form className="space-y-3 mt-4">
+            <form onSubmit={handleLogin} className="space-y-3 mt-4">
               <div className="form-control w-full">
                 <label htmlFor="email" className="font-bold text-lg ">
                   Email
@@ -118,6 +54,7 @@ const Login = () => {
                   type="email"
                   placeholder="Example@gmail.com"
                   className="input-md md:input-lg rounded-lg border-b-4 hover:border-b-teal-500 duration-500 outline-none bg-[#F7FBFF]"
+                  name="email"
                 />
               </div>
               <div className="form-control w-full relative">
@@ -128,6 +65,7 @@ const Login = () => {
                   type="password"
                   placeholder="at least 6 characters"
                   className="input-md md:input-lg border-b-4 outline-none rounded-lg  bg-[#F7FBFF] hover:border-b-teal-500 duration-500"
+                  name='password'
                 />
               </div>
               <div className="flex justify-end">
@@ -135,12 +73,13 @@ const Login = () => {
                   Forgot Password?
                 </p>
               </div>
+
               <button
                 type="submit"
-                value=""
-                className="btn md:btn-lg w-full bg-[#162D3A] text-white hover:bg-green-400 hover:text-black duration-500 "
+                className="btn md:btn-lg w-full bg-[#162D3A] text-white hover:bg-green-400 hover:text-black duration-500"
+                disabled={loading}
               >
-                Sign in
+                {loading ? "Signing in..." : "Sign in"}
               </button>
             </form>
             <div className="divider divider-neutral">
@@ -171,6 +110,7 @@ const Login = () => {
           />
         </div>
         {/* ToastContainer can be included here if needed */}
+        <ToastContainer />
       </div>
     </>
   );

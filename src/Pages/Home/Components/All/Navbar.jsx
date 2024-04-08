@@ -37,22 +37,21 @@ const Navbar = () => {
                 }
                 to='/allProperties'
             >
-                <span className="font-semibold">All Properties</span>
+                <span className="font-semibold">Properties</span>
             </NavLink>
         </li>
 
-        <li>
-            <NavLink
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "font-black underline" : ""
-                }
-                to='/savedProperties'
-            >
-                <span className="font-semibold">Saved Properties</span>
-            </NavLink>
-        </li>
-
-
+        {user &&
+            <li>
+                <NavLink
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "font-black underline" : ""
+                    }
+                    to='/savedProperties'
+                >
+                    <span className="font-semibold">Saved Properties</span>
+                </NavLink>
+            </li>}
     </>
 
 
