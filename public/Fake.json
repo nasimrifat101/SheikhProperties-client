@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Modern City Villa",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/T1YT03Vd/tobias-reich-UEsjzyeSDQk-unsplash.jpg",
     "bedrooms": 2,
     "bathrooms": 1.5,
     "size": 1200,
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Spacious Suburban Land",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/Sxjy9fL3/julian-ebert-z-Sflp4-Mq-l0-unsplash.jpg",
     "size": 2000,
     "address": "Savar, Dhaka",
     "status": "Rent",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Luxury Beachfront Apartment",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/NfPzF3sh/huy-nguyen-AB-q9lw-CVv8-unsplash.jpg",
     "bedrooms": 4,
     "bathrooms": 4,
     "size": 3500,
@@ -33,7 +33,7 @@
   {
     "id": 4,
     "name": "Spacious Warehouse",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/BQSZS0jq/david-griffiths-x-Ky3-XMJRz-U-unsplash.jpg",
     "size": 800,
     "address": "Savar, Dhaka",
     "status": "Sale",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Downtown Village House",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/T1YT03Vd/tobias-reich-UEsjzyeSDQk-unsplash.jpg",
     "bedrooms": 1,
     "bathrooms": 1,
     "size": 1000,
@@ -75,7 +75,7 @@
   {
     "id": 8,
     "name": "Contemporary Warehouse",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/BQSZS0jq/david-griffiths-x-Ky3-XMJRz-U-unsplash.jpg",
     "size": 3000,
     "address": "Savar, Dhaka",
     "status": "Sale",
@@ -84,7 +84,7 @@
   {
     "id": 9,
     "name": "Historic Warehouse",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/BQSZS0jq/david-griffiths-x-Ky3-XMJRz-U-unsplash.jpg",
     "size": 2200,
     "address": "Savar, Dhaka",
     "status": "Rent",
@@ -93,7 +93,7 @@
   {
     "id": 10,
     "name": "Warehouse",
-    "image": "https://i.postimg.cc/9FZ0ZDPN/ba5b809d42b2ea20eb69586e7ba360a7.jpg",
+    "image": "https://i.postimg.cc/BQSZS0jq/david-griffiths-x-Ky3-XMJRz-U-unsplash.jpg",
     "size": 6000,
     "address": "Savar, Dhaka",
     "status": "Rent",

@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 const AdminNav = () => {
     const navs =
         <>
-            <li><NavLink to={'/properties'}>Properties</NavLink></li>
             <li><NavLink to={'/add-properties'}>Add Property</NavLink></li>
+            <li><NavLink to={'/properties'}>Properties</NavLink></li>
             <li><NavLink to={'/clients'}>Clients</NavLink></li>
         </>
     return (
